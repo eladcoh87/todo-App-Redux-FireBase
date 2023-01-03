@@ -1,0 +1,28 @@
+.TodoContainer{
+
+background-color: white;
+min-height: 30rem;
+width: 40vw;
+
+padding: 1.3rem;
+box-shadow: -1px 1px 8px 3px rgba(0,0,0,0.35);
+-webkit-box-shadow: -1px 1px 8px 3px rgba(0,0,0,0.35);
+-moz-box-shadow: -1px 1px 8px 3px rgba(0,0,0,0.35);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+
+
+}
+
+
+// @media (min-width: 860px){
+
+//     .TodoContainer {
+//         width: 50rem;
+
+//     }
+
+//   }

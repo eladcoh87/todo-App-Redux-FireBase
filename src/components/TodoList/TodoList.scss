@@ -1,0 +1,29 @@
+
+
+.todo-list-container {
+
+margin-top: 20px;
+
+display: flex;
+flex-direction: column;
+gap: 1rem;
+
+.taskInfo {
+
+
+display: flex;
+justify-content: space-between;
+margin-top: 15px;
+
+}
+
+
+.notodo{
+
+
+background-color: red;
+
+
+}
+
+}

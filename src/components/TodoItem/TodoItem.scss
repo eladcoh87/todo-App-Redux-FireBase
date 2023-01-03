@@ -1,0 +1,68 @@
+
+.itemContainer {
+
+display: flex;
+gap: 10px;
+
+
+
+
+
+    .ItemText {
+
+
+        background-color: #e2e2e2;
+        padding: 15px;
+        width: 80%;
+        border-radius: 10px;
+        
+        }
+
+
+
+ .btnContainer {
+
+        display: flex;
+        gap: 10px;
+
+
+
+
+
+.editbtn{
+
+background-color: #ca35ca;
+color: white;
+border: none;
+border-radius: 10px;
+
+&:hover {
+       background-color: #b664b6
+}
+
+}
+
+
+
+
+.delbtn{
+
+       background-color: red;
+       color: white;
+       border: none;
+       border-radius: 10px;
+       
+
+
+       &:hover {
+              background-color: rgb(252, 91, 91);
+       }
+       }
+       
+ 
+
+
+ }
+
+}
+
