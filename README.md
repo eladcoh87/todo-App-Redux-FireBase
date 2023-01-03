@@ -7,7 +7,7 @@
 
 ## Live Demo 🌐 :
 
-https://mobilex.vercel.app
+https://todo-app-redux-fire-base.vercel.app
 
 
 or
