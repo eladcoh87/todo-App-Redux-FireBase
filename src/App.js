@@ -22,7 +22,7 @@ useEffect(() => {
 
         const response =  await fetch('https://mcity-d0157-default-rtdb.firebaseio.com/todo.json')
         if (!response.ok) {
-         throw new Error('somtinhg went wrong!!!!')
+         throw new Error('somtinhg went wrong!!')
        }
 
 
