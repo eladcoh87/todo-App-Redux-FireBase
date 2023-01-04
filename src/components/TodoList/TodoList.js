@@ -6,7 +6,7 @@ import ClearTodo from './ClearTodo'
 import NoToDo from './NoToDo'
 import './TodoList.scss'
 
-const TodoList = () => {
+const TodoList = (props) => {
 
 
   console.log('todo llist render')
@@ -24,14 +24,19 @@ const renderList = todolist.map((todo) => {
   });
   
 
+  
+  
+  console.log(props.loading);
 
+  const flag = (props.loading === false) && (todolist.length === 0);
+  console.log(flag);
   return (
 
     
 
     <div className='todo-list-container'>
 
-{todolist.length === 0 && <NoToDo className="notodo" />}
+{flag && <NoToDo className="notodo" />}
 
 {renderList}
 

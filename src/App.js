@@ -2,18 +2,22 @@ import './App.scss'
 import  './'
 import TodoContainer from './components/TodoContainer/TodoContainer';
 
-import { useEffect } from 'react';
-import { useDispatch ,useSelector} from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch} from 'react-redux';
 import { getTodoListAction } from './components/store/actions';
 
 
 function App() {
 
-  const dispatch = useDispatch()
+  const [isLoading,setIsLoading] = useState(true)
+
+  const dispatch = useDispatch();
 
 
 useEffect(() => {
 
+
+  
   const getTodoList = async () => {
 
 
@@ -31,7 +35,7 @@ useEffect(() => {
           console.log(data,'come from app-getfunc');
         
         dispatch(getTodoListAction(data))
-            
+        setIsLoading(false)
        
        } catch(error) {
 
@@ -40,11 +44,15 @@ useEffect(() => {
        
        }
       
+
+
+
          }
        
 
 
          getTodoList()
+
 
 },[])
 
@@ -57,8 +65,7 @@ useEffect(() => {
 
    <div className='appContainer'>
     
-    
-    <TodoContainer />
+    <TodoContainer loading = {isLoading} />
     
     </div>
 
