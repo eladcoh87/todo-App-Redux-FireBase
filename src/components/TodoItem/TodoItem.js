@@ -38,8 +38,8 @@ const TodoItem = (props) => {
   };
 
   const handleEdit = async (editInput) => {
-    const newTodoObject = { text: editInput, name: todoname }(newTodoObject);
-    // const newModifyTodo = {text:'duummy text '}
+    
+    const newTodoObject = { text: editInput, name: todoname};
 
     const response = await fetch(
       `https://mcity-d0157-default-rtdb.firebaseio.com/todo/${todoname}.json`,
