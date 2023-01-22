@@ -1,75 +1,44 @@
+const todoListReducer = (state = { todolist: [] }, action) => {
+  switch (action.type) {
+    case 'GET_TO_DO':
+      const todolist = [];
+      for (const key in action.payload) {
+        if (Object.hasOwnProperty.call(action.payload, key)) {
+          const element = action.payload[key];
+          element.name = key;
 
-
-
-
-const todoListReducer = (state = {todolist:[]}, action) => {
-
-
-    
-
-switch (action.type) {
-    
-    
-        
-        case 'GET_TO_DO':
-            
-       
-
-        const todolist = []
-        for (const key in action.payload) {
-
-            if (Object.hasOwnProperty.call(action.payload, key)) {
-                console.log(key);
-                const element = action.payload[key];
-                element.name = key;
-                console.log(element);
-                todolist.push(element)
-            }
+          todolist.push(element);
         }
-       
-            console.log(todolist);
+      }
 
-            return {...state,todolist}
+      return { ...state, todolist };
 
+    case 'ADD_NEWֹTODO':
+      const newtodolist = [...state.todolist, action.payload];
 
-        case 'ADD_NEWֹTODO':
+      return { ...state, todolist: newtodolist };
 
+    case 'DELET_TO_DO':
+      const newFilteredTOdo = state.todolist.filter(
+        (todo) => todo.name !== action.payload
+      );
 
-            console.log(action.payload,'REDCUDER NEW TODO');
+      return { ...state, todolist: newFilteredTOdo };
 
-        const newtodolist = [...state.todolist,action.payload];
+    case 'EDIT_TO_DO':
+      const newEdittoToList = state.todolist.map((todo) =>
+        todo.name === action.payload.name ? action.payload : todo
+      );
 
-            console.log(newtodolist);
-            
-            return {...state,todolist:newtodolist}
-            
-        case 'DELET_TO_DO':
-            
-        console.log(action.payload,'coeme from  delet reducer ');
+      return { ...state, todolist: newEdittoToList };
 
-               const newFilteredTOdo = state.todolist.filter((todo => todo.name !== action.payload))
+    case 'CLEAR_ALL':
+      const emptyTodoList = [];
 
-              
-        return {...state,todolist:newFilteredTOdo}
+      return { todolist: emptyTodoList };
 
-        case 'EDIT_TO_DO':
-            
-                console.log(action.payload);
-
-                const newEdittoToList = state.todolist.map(todo => todo.name === action.payload.name ? action.payload : todo )
-              
-        return {...state,todolist:newEdittoToList}
-
-        case 'CLEAR_ALL':
-                
-        const emptyTodoList = []
-
-        return {todolist:emptyTodoList}
-
-            default: 
-            return state
-    }
-    
-    }
-    export default todoListReducer
-    
+    default:
+      return state;
+  }
+};
+export default todoListReducer;

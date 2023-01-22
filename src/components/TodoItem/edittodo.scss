@@ -1,36 +1,21 @@
 .editContainer {
+  display: flex;
+  justify-content: space-between;
 
-display: flex;
-justify-content: space-between;
- 
-    
+  input {
+    width: 80%;
+    height: 3rem;
+    border-radius: 15px;
+    padding: 10px;
+  }
 
-input {
-
-
-width: 80%;
-height: 3rem;
-border-radius: 15px;
-padding: 10px;
-
-}
-
-
-.editbtn {
-
+  .editbtn {
     background-color: rgba(47, 255, 116, 0.979);
     color: black;
-        border-radius: 15px;
+    border-radius: 15px;
 
-
-&:hover {
-
-    background-color: rgba(89, 255, 47, 0.979);
-
-
-}
-}
-
-
-
+    &:hover {
+      background-color: rgba(89, 255, 47, 0.979);
+    }
+  }
 }
